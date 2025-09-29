@@ -5,7 +5,6 @@ This repository contains a UVM (Universal Verification Methodology) testbench de
 Unlike the “No DUT” version, this setup integrates an APB DUT (design.sv), which implements a 16x32-bit APB register file.
 The testbench drives APB transactions to the DUT, monitors responses, and checks them against a reference model.
 
---
 # Repository Structure
 
 design.sv
@@ -37,7 +36,8 @@ UVM test classes to start sequences and run the environment (apb_base_test).
 
 test_top.sv
 Top-level testbench module. Instantiates the APB interface, DUT (design.sv), and starts the UVM test.
---
+
+
 # How It Works
 
 Sequences generate random or directed APB read/write transactions.
@@ -50,7 +50,7 @@ Monitor observes all transactions and forwards them to the scoreboard.
 
 Scoreboard compares DUT responses with a reference model for correctness.
 
---
+
 
 # Running the Test
 
@@ -64,7 +64,7 @@ apb_agent.svh apb_env.svh apb_test.svh \
 +incdir+.
 ./simv +UVM_TESTNAME=apb_base_test
 
---
+
 
 # Features
 
